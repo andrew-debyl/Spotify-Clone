@@ -11,28 +11,28 @@ import { Song } from "@/types";
 
 interface Props {
   children: React.ReactNode;
-  songs: Song[]
+  songs: Song[];
 }
 
 const Sidebar: React.FC<Props> = ({ children, songs }) => {
-  const pathName = usePathname();
+  const pathname = usePathname();
 
   const routes = useMemo(
     () => [
       {
         icon: HiHome,
         label: "Home",
-        active: pathName !== "/search",
+        active: pathname !== "/search",
         href: "/",
       },
       {
         icon: BiSearch,
         label: "Search",
-        active: pathName === "/search",
-        href: "/",
+        href: "/search",
+        active: pathname === "/search",
       },
     ],
-    [pathName]
+    [pathname]
   );
 
   return (
@@ -46,7 +46,7 @@ const Sidebar: React.FC<Props> = ({ children, songs }) => {
           </div>
         </Box>
         <Box className="overflow-y-auto h-full">
-          <Library songs={songs}/>
+          <Library songs={songs} />
         </Box>
       </div>
       <main className="h-full flex-1 overflow-y-auto py-2">{children}</main>

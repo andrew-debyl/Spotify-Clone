@@ -40,6 +40,3 @@ const MediaItem: React.FC<Props> = ({ data, onClick }) => {
 };
 
 export default MediaItem;
-
-
-//TIMESTAMPPPPPPPPPPPPPPPPPPPPPPPPPPPPP: 3:27:16
