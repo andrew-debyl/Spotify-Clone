@@ -29,6 +29,8 @@ const MediaItem: React.FC<Props> = ({ data, onClick }) => {
           src={imageUrl || "/images/liked.png"}
           alt="Media Item"
           className="object-cover"
+          sizes="99vw"
+          priority={true}
         />
       </div>
       <div className="flex flex-col gap-y-1 overflow-hidden">
